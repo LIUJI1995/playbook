@@ -1,0 +1,6 @@
+- name: agee
+  hosts: all
+  tasks:
+    - name: agee
+      debug:
+        msg: "this is agee"
