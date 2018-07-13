@@ -1,14 +1,9 @@
-- name: agee
-  hosts: all
+- name: handlerstest
+  hosts: test
   tasks:
-    - name: install httpd
-      apt:
-        name: httpd
-        state: installed
-        update_cache: true 
-        notify: Start Httpd 
-   handlers:
-    - name: Start Httpd
-      service:
-       name: httpd
-       state: started
+     - name: copy file
+       copy: src=/etc/passwd dest=/tmp/a.txt
+       notify: testhandlers
+  handlers:
+     - name: testhandlers
+       shell: echo "it's OK !" >> /tmp/a.txt
