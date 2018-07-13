@@ -1,6 +1,15 @@
 - name: agee
   hosts: all
   tasks:
-    - name: agee
-      debug:
-        msg: "this is agee"
+    - name: install httpd
+      apt:
+        name:httpd
+        state:installed
+        update_cache:ture 
+       notify:
+        -Start Httpd
+   handlers:
+    -name:Start Httpd
+     service:
+      name:httpd
+      state:started
