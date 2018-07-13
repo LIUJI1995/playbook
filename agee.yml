@@ -6,9 +6,7 @@
         name: httpd
         state: installed
         update_cache: true 
-       notify:
-        - Start Httpd
-         
+        notify: Start Httpd 
    handlers:
     - name: Start Httpd
       service:
