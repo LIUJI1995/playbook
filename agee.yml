@@ -1,5 +1,5 @@
 - name: handlerstest
-  hosts: test
+  hosts: all
   tasks:
      - name: copy file
        copy: src=/etc/passwd dest=/tmp/a.txt
