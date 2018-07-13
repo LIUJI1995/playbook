@@ -3,14 +3,14 @@
   tasks:
     - name: install httpd
       apt:
-        name:httpd
-        state:installed
-        update_cache:true 
+        name: httpd
+        state: installed
+        update_cache: true 
        notify:
         -Start Httpd
         
    handlers:
-    -name:Start Httpd
+    -name: Start Httpd
      service:
-      name:httpd
-      state:started
+      name: httpd
+      state: started
