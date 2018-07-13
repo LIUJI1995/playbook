@@ -5,11 +5,12 @@
       apt:
         name: httpd
         state: installed
+        update_cache: true 
        notify:
-        -Start Httpd
-        
+        - Start Httpd
+         
    handlers:
-    -name: Start Httpd
-     service:
-      name: httpd
-      state: started
+    - name: Start Httpd
+      service:
+       name: httpd
+       state: started
