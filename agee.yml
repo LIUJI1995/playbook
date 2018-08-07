@@ -1,8 +1,9 @@
-- name: handlerstest
-  hosts: all
+- hosts: all
   tasks:
      - name: copy file
-       copy: src=/etc/passwd dest=/tmp/a.txt
+       copy: 
+         src: /etc/passwd 
+         dest: /tmp/a.txt
        notify: testhandlers
   handlers:
      - name: testhandlers
